@@ -24,7 +24,8 @@ class DisabledOnJreRangeTest {
 	void onJava9Or10() {
 		System.out.println("This test is executed only for JRE 9 OR 10 ");
 	}
-
+	
+	
 	@Test
 	@EnabledForJreRange(min = JAVA_9, max = JAVA_11)
 	void fromJava9to11() {
