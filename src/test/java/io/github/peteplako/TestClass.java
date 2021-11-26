@@ -6,9 +6,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class TestClass {
 	
 	protected WebDriver driver;
+	protected LoginPage loginpage;
+	protected ProductsPage productspage;
 	
 	@BeforeAll
 	static void setupClass() {
@@ -17,13 +20,13 @@ public class TestClass {
 	}
 	
 	@BeforeEach
-	void setUp() {
-
+	void setUp() throws Exception {
 		driver = new ChromeDriver();
-
+		loginpage = new LoginPage(driver);
+		driver.get("https://www.saucedemo.com/");
+		
 	}
 
-	
 	@AfterEach
 	void tearDown() {
 
